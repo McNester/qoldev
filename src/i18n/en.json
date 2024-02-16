@@ -1,0 +1,199 @@
+{
+  "everythingYouNeed": "Everything you need for",
+  "yourBusiness": "your business",
+  "buttons": {
+    "price": "Price",
+    "orderWebsite": "Order a website",
+    "contactUs": "Contact us"
+  },
+  "menu": {
+    "about": "About us",
+    "portfolio": "Portfolio",
+    "service": "Service",
+    "contact": "Contact us"
+  },
+  "businessSolution": "Solution for any business",
+  "linksDescription": {
+    "cobra": "Dietary supplements and traditional medicine",
+    "qtap": "Library and books",
+    "steppeTech": "Innovations and technologies of Kazakstan",
+    "americanTaste": "Best recepies from all over America",
+    "bolshoiTravel": "Travel and tours in Russia",
+    "almatyArt": "Paintings and art of Almaty",
+    "innovateWest": "Zero-waste plastic from America",
+    "astanaFin": "Financial center of Astana"
+  },
+  "bentoCards": {
+    "speed": "Speed",
+    "effectiveDev": "Effective and rapid development",
+    "quality": "Quality",
+    "forAllTime": "For all the time",
+    "cansDrunk": "Cans of Red bull were drunk",
+    "offerIdeas": "We offer new ideas and solutions",
+    "creativity": "Creativity",
+    "doneProjects": "Completed projects"
+  },
+  "serviceAndPrice": "Services and prices",
+  "priceCards": {
+    "first": {
+      "title": "Lending",
+      "body": "Landing page for quick collection of applications. A great way to talk about your offer, even if there is little information and feedback, and you already need to receive applications.",
+      "price": "from $80",
+      "time": "from 7 days"
+    },
+    "second": {
+      "title": "Multi-page",
+      "body": "A corporate website with two or more linked pages that presents your brand or company and talks about specific services.",
+      "price": "from $200",
+      "time": "from 14 days"
+    },
+    "third": {
+      "title": "Online store on Tilde",
+      "body": "A website for the sale of goods. Setting up a catalog, accepting applications and payments to make it easier and more convenient for you to sell online. Up to 400 product items on the website.",
+      "price": "from $280",
+      "time": "from 14 days"
+    },
+    "fourth": {
+      "title": "Online store on Wordpress",
+      "body": "A website for the sale of goods. Setting up a catalog, accepting applications and payments to make it easier and more convenient for you to sell online. Up to 400 product items on the website.",
+      "price": "from $440",
+      "time": "from 27 days"
+    },
+    "fifth": {
+      "title": "Technical support",
+      "body": "Technical support is calculated individually depending on the tasks and amount of work",
+      "price": "from $44",
+      "time": "from 30 days"
+    },
+    "sixth": {
+      "title": "Layout design",
+      "body": "Development of a marketing and modern website design. It is suitable if you already have a team with a layout designer, or you are planning a technically more complex site",
+      "price": "from $50",
+      "time": "from 2 days"
+    }
+  },
+  "tryIt": "Try it yourself",
+  "experienceService": "Experience the best service for digitalizing your business",
+  "pricePopup": {
+    "lending": {
+      "serviceList": [
+        { "id": 1, "name": "Working out the structure of the site" },
+        { "id": 2, "name": "Selection of an individual design" },
+        { "id": 3, "name": "Website development, adaptation to basic permissions" },
+        { "id": 4, "name": "Modern and relevant animation" },
+        { "id": 5, "name": "Favicon" },
+        {
+          "id": 6,
+          "name": "Technical settings: domain connection, SSL certificate, feedback forms, etc."
+        },
+        { "id": 7, "name": "Technical pages (success page, error 404, Data privacy policy)" },
+        { "id": 8, "name": "One language version of the site" }
+      ],
+      "notInclude": {
+        "title": ["The price", " does not include:"],
+        "serviceList": [
+          { "id": 1, "name": "Paying for hosting and buying a domain" },
+          { "id": 2, "name": "Payment for third-party services" }
+        ]
+      }
+    },
+    "multiPage": {
+      "serviceList": [
+        { "id": 1, "name": "Working out the structure of the site" },
+        { "id": 2, "name": "Selection of an individual design" },
+        { "id": 3, "name": "Website development, adaptation to basic permissions" },
+        { "id": 4, "name": "Modern and relevant animation" },
+        { "id": 5, "name": "Favicon" },
+        {
+          "id": 6,
+          "name": "Technical settings: domain connection, SSL certificate, feedback forms, etc."
+        },
+        { "id": 7, "name": "Technical pages (success page, error 404, Data privacy policy)" },
+        { "id": 8, "name": "There is 1 additional language available on the site" },
+        {
+          "id": 9,
+          "name": "Conducting training for self-use of the site (recording the screen with instructions)"
+        }
+      ],
+      "notInclude": {
+        "title": ["The price", " does not include:"],
+        "serviceList": [
+          { "id": 1, "name": "Paying for hosting and buying a domain" },
+          { "id": 2, "name": "Payment for third-party services" }
+        ]
+      }
+    },
+    "tilda": {
+      "serviceList": [
+        { "id": 1, "name": "Competitor and target audience analysis" },
+        { "id": 2, "name": "Working out the site map" },
+        { "id": 3, "name": "Selection of an individual design" },
+        { "id": 4, "name": "Design of the main and internal pages" },
+        { "id": 5, "name": "Creating a catalog and product cards" },
+        { "id": 6, "name": "Connecting the payment system and shopping cart" },
+        { "id": 7, "name": "Website development, adaptation to basic permissions" },
+        { "id": 8, "name": "Modern and relevant animation" },
+        { "id": 9, "name": "Favicon" },
+        {
+          "id": 10,
+          "name": "Technical settings: domain connection, SSL certificate, feedback forms, etc."
+        },
+        { "id": 11, "name": "Technical pages (success page, error 404, Data privacy policy)" },
+        { "id": 12, "name": "One language version of the site" },
+        {
+          "id": 13,
+          "name": "Conducting training for self-use of the site (recording the screen with instructions)"
+        },
+        { "id": 14, "name": "Domain as a gift" }
+      ],
+      "notInclude": {
+        "title": ["The price", " does not include:"],
+        "serviceList": [
+          { "id": 1, "name": "Paying for hosting" },
+          { "id": 2, "name": "Payment for third-party services" }
+        ]
+      }
+    },
+    "shop": {
+      "serviceList": [
+        { "id": 1, "name": "Competitor and target audience analysis" },
+        { "id": 2, "name": "Working out the site map" },
+        { "id": 3, "name": "Selection of an individual design" },
+        { "id": 4, "name": "Design of the main and internal pages" },
+        { "id": 5, "name": "Creating a catalog and product cards" },
+        { "id": 6, "name": "Connecting the payment system and shopping cart" },
+        { "id": 7, "name": "Website development, adaptation to basic permissions" },
+        { "id": 8, "name": "Modern and relevant animation" },
+        { "id": 9, "name": "Favicon" },
+        {
+          "id": 10,
+          "name": "Technical settings: domain connection, SSL certificate, feedback forms, etc."
+        },
+        { "id": 11, "name": "Technical pages (success page, error 404, Data privacy policy)" },
+        { "id": 12, "name": "One language version of the site" },
+        {
+          "id": 13,
+          "name": "Conducting training for self-use of the site (recording the screen with instructions)"
+        },
+        { "id": 14, "name": "Domain as a gift" }
+      ],
+      "notInclude": {
+        "title": ["The price", " does not include:"],
+        "serviceList": [
+          { "id": 1, "name": "Paying for hosting" },
+          { "id": 2, "name": "Payment for third-party services" }
+        ]
+      }
+    }
+  },
+  "contactPopup": {
+    "readyToDiscuss": "We are ready to discuss any idea you have!",
+    "phoneNumber": "phone number:",
+    "messengers": "messengers",
+    "leaveYourData": "Leave your details, we will contact you soon and answer all your questions!",
+    "placeHolders": {
+      "name": "Your name",
+      "message": "Message"
+    }
+  }
+}
