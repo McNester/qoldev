@@ -15,7 +15,7 @@ export default {
 <style scoped>
 .gradient-border {
   @apply xl:scale-[100%];
-  background: linear-gradient(to right, #ff7f22, #2622ff);
+  background: -webkit-linear-gradient(right, #ff7f22, #2622ff);
   padding: 0.5px;
   border-radius: 8px;
   display: inline-block;
@@ -38,9 +38,9 @@ button {
 @media (hover: hover) {
   .gradient-border:hover {
     @apply scale-105;
-    button {
-      background: none;
-    }
+  }
+  .gradient-border:hover button {
+    background: none;
   }
   .gradient-border:active {
     @apply scale-100;

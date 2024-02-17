@@ -7,6 +7,7 @@
     <div id="inner3" class="flex h-fit w-fit flex-col items-center justify-between gap-2">
       <h2 class="text-right">{{ $t(this.price) }}</h2>
       <h4>{{ $t(this.time) }}</h4>
+      <h4 v-if="this.elementId < 5" class="includedInPrice">{{ $t('priceIncluded') }}</h4>
     </div>
 
     <gradient-btn id="inner4">{{ $t('buttons.orderWebsite') }}</gradient-btn>
@@ -19,7 +20,8 @@ export default {
     title: { type: String },
     body: { type: String },
     price: { type: String },
-    time: { type: String }
+    time: { type: String },
+    elementId: { type: Number }
   }
 }
 </script>
@@ -42,6 +44,25 @@ h3 {
 }
 h4 {
   @apply text-center text-[0.8rem] font-light  text-white text-opacity-70;
+}
+
+.includedInPrice {
+  @apply underline xl:-mb-7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media (hover: hover) {
+  .includedInPrice:hover {
+    @apply text-white;
+  }
+  .includedInPrice:active {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+@media (hover: none) {
+  .includedInPrice:active {
+    @apply text-white;
+  }
 }
 
 @media (min-width: 768px) {
@@ -92,6 +113,9 @@ h4 {
   #inner3 {
     @apply -ml-[2rem];
   }
+  .includedInPrice {
+    @apply -ml-[3rem];
+  }
   #inner4 {
     @apply -ml-[0.6rem];
   }
@@ -116,6 +140,7 @@ h4 {
   #inner3 {
     @apply -ml-[4rem];
   }
+
   #inner4 {
     @apply -ml-[0rem];
   }

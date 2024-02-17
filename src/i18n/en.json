@@ -34,41 +34,42 @@
     "doneProjects": "Completed projects"
   },
   "serviceAndPrice": "Services and prices",
+  "priceIncluded": "What's in the price?",
   "priceCards": {
     "first": {
       "title": "Lending",
       "body": "Landing page for quick collection of applications. A great way to talk about your offer, even if there is little information and feedback, and you already need to receive applications.",
-      "price": "from $80",
+      "price": "from $220",
       "time": "from 7 days"
     },
     "second": {
       "title": "Multi-page",
       "body": "A corporate website with two or more linked pages that presents your brand or company and talks about specific services.",
-      "price": "from $200",
+      "price": "from $400",
       "time": "from 14 days"
     },
     "third": {
       "title": "Online store on Tilde",
       "body": "A website for the sale of goods. Setting up a catalog, accepting applications and payments to make it easier and more convenient for you to sell online. Up to 400 product items on the website.",
-      "price": "from $280",
+      "price": "from $560",
       "time": "from 14 days"
     },
     "fourth": {
       "title": "Online store on Wordpress",
       "body": "A website for the sale of goods. Setting up a catalog, accepting applications and payments to make it easier and more convenient for you to sell online. Up to 400 product items on the website.",
-      "price": "from $440",
+      "price": "from $690",
       "time": "from 27 days"
     },
     "fifth": {
       "title": "Technical support",
       "body": "Technical support is calculated individually depending on the tasks and amount of work",
-      "price": "from $44",
+      "price": "from $70",
       "time": "from 30 days"
     },
     "sixth": {
       "title": "Layout design",
       "body": "Development of a marketing and modern website design. It is suitable if you already have a team with a layout designer, or you are planning a technically more complex site",
-      "price": "from $50",
+      "price": "from $110",
       "time": "from 2 days"
     }
   },

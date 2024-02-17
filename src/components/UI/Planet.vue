@@ -41,10 +41,10 @@ h2 {
 }
 #verticalLine {
   transition: all 0.5s ease;
-  @apply mr-2 h-[107%] w-[0.01rem] bg-white bg-opacity-65;
+  @apply mr-2 h-[107%] w-[0.02rem] bg-white bg-opacity-65;
 }
 #centerLine {
-  @apply h-[4rem] w-[0.01rem] bg-white bg-opacity-65;
+  @apply h-[4rem] w-[0.05rem] bg-white bg-opacity-65;
   display: none;
 }
 img {
@@ -91,32 +91,28 @@ img {
   .fade-leave-active {
     animation: fadeOut 0.5s ease forwards;
   }
-  .chosenLarge {
-    #centerLine {
-      animation: fadeIn 0.5s ease forwards !important;
-    }
-    h2 {
-      animation: fadeIn 0.5s ease forwards !important;
-    }
+
+  .chosenLarge #centerLine {
+    animation: fadeIn 0.5s ease forwards !important;
   }
-  .regular {
-    #centerLine {
-      animation: fadeOut 0.5s ease forwards;
-    }
-    h2 {
-      animation: fadeOut 0.5s ease forwards;
-    }
+  .chosenLarge h2 {
+    animation: fadeIn 0.5s ease forwards !important;
+  }
+  .regular #centerLine {
+    animation: fadeOut 0.5s ease forwards;
+  }
+  .regular h2 {
+    animation: fadeOut 0.5s ease forwards;
   }
 }
-.chosen {
-  img {
-    @apply scale-150;
-  }
-  #verticalLine {
-    @apply bg-opacity-100;
-  }
-  a {
-    @apply pb-6 opacity-100;
-  }
+
+.chosen img {
+  @apply scale-150;
+}
+.chosen #verticalLine {
+  @apply bg-opacity-100;
+}
+.chosen a {
+  @apply pb-6 opacity-100;
 }
 </style>

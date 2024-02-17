@@ -65,8 +65,8 @@
         :class="{
           alignRight: planet.id % 2 === 0,
           alignLeft: planet.id % 2 !== 0,
-          chosen: currentPlanet == planet.id,
-          chosenLarge: currentPlanet == planet.id,
+          chosen: currentPlanet === planet.id,
+          chosenLarge: currentPlanet === planet.id,
           marginBottom10: planet.id == 1,
           marginBottom20: planet.id == 2,
           marginBottom30: planet.id == 3,
@@ -93,6 +93,7 @@
       {{ $t('serviceAndPrice') }}
     </h1>
     <service-card
+      :elementId="service.id"
       :id="'item' + service.id"
       v-for="service in services"
       :key="service.id"
