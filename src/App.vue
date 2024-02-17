@@ -115,7 +115,11 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { ref, computed } from 'vue'
-const menuIconSrc = ref('../../../../public/sideBarBtn.svg')
+
+const sideBarImg = new URL('../public/sideBarBtn.svg', import.meta.url).href
+const colseSideBarImg = new URL('../public/closeSideBarBtn.svg', import.meta.url).href
+
+const menuIconSrc = ref('../public/sideBarBtn.svg')
 const isSideBarOpen = ref(false)
 function sideBarAction() {
   if (isSideBarOpen.value == true) {
@@ -127,12 +131,25 @@ function sideBarAction() {
 }
 
 function changeMenuIconSrc() {
-  if (menuIconSrc.value == '../../../../public/sideBarBtn.svg') {
-    menuIconSrc.value = '../../../../public/closeSideBarBtn.svg'
+  if (menuIconSrc.value == 'http://localhost:5173/sideBarBtn.svg') {
+    menuIconSrc.value = colseSideBarImg
+    console.log(colseSideBarImg)
+    console.log('WHHHHHHH')
   } else {
-    menuIconSrc.value = '../../../../public/sideBarBtn.svg'
+    console.log(sideBarImg)
+    console.log('WHHHHHHH')
+    menuIconSrc.value = sideBarImg
   }
 }
+const getImageUrl = computed(() => {
+  if (menuIconSrc.value === '../../../../public/sideBarBtn.svg') {
+    menuIconSrc.value = '../../../../public/closeSideBarBtn.svg'
+    return new URL(`../public/closeSideBarBtn.svg`, import.meta.url)
+  } else {
+    menuIconSrc.value = '../../../../public/sideBarBtn.svg'
+    return new URL(`../public/sideBarBtn.svg`, import.meta.url)
+  }
+})
 
 const { t } = useI18n({ useScope: 'global' })
 </script>
