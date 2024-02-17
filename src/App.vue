@@ -9,7 +9,7 @@
       <side-bar-option
         class="hidden sm:block"
         :name="$t('menu.' + option.name)"
-        v-for="option in this.options"
+        v-for="option in options"
         :key="option.id"
       >
       </side-bar-option>
