@@ -26,7 +26,7 @@
     </button>
 
     <button @click="sideBarAction" class="sm:hidden" type="button" aria-label="menu">
-      <img :src="getImageUrl()" alt="menu" />
+      <img :src="menuIconSrc" alt="menu" />
     </button>
   </header>
 
@@ -114,10 +114,24 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import menuIconSrc from '../public/sideBarBtn.svg'
-import menuIconSrcClosed from '../public/closeSideBarBtn.svg'
-const getImageUrl = () => {
-  return new URL(`../public/sideBarBtn.svg`, import.meta.url)
+import { ref, computed } from 'vue'
+const menuIconSrc = ref('../../../../public/sideBarBtn.svg')
+const isSideBarOpen = ref(false)
+function sideBarAction() {
+  if (isSideBarOpen.value == true) {
+    isSideBarOpen.value = false
+  } else {
+    isSideBarOpen.value = true
+  }
+  changeMenuIconSrc()
+}
+
+function changeMenuIconSrc() {
+  if (menuIconSrc.value == '../../../../public/sideBarBtn.svg') {
+    menuIconSrc.value = '../../../../public/closeSideBarBtn.svg'
+  } else {
+    menuIconSrc.value = '../../../../public/sideBarBtn.svg'
+  }
 }
 
 const { t } = useI18n({ useScope: 'global' })
@@ -189,23 +203,7 @@ export default {
       ]
     }
   },
-  methods: {
-    sideBarAction() {
-      if (this.isSideBarOpen == true) {
-        this.isSideBarOpen = false
-      } else {
-        this.isSideBarOpen = true
-      }
-      this.changeMenuIconSrc()
-    },
-    changeMenuIconSrc() {
-      if (this.menuIconSrc == '../../../../public/sideBarBtn.svg') {
-        this.menuIconSrc = '../../../../public/closeSideBarBtn.svg'
-      } else {
-        this.menuIconSrc = '../../../../public/sideBarBtn.svg'
-      }
-    }
-  },
+  methods: {},
   mounted() {
     if (
       !document.querySelector(
