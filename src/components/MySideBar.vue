@@ -32,11 +32,7 @@
     <div id="mainLine"></div>
 
     <article id="options">
-      <side-bar-option
-        :name="$t('menu.' + option.name)"
-        v-for="option in this.options"
-        :key="option.id"
-      >
+      <side-bar-option :name="$t('menu.' + option.name)" v-for="option in options" :key="option.id">
       </side-bar-option>
     </article>
   </div>

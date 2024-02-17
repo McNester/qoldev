@@ -47,10 +47,8 @@ button {
   }
 }
 @media (hover: none) {
-  .gradient-border:active {
-    button {
-      background: none;
-    }
+  .gradient-border:active button {
+    background: none;
   }
 }
 

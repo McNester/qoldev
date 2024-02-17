@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <h1 id="inner1">{{ $t(this.title) }}</h1>
+    <h1 id="inner1">{{ $t(title) }}</h1>
     <h3 id="inner2">
-      {{ $t(this.body) }}
+      {{ $t(body) }}
     </h3>
     <div id="inner3" class="flex h-fit w-fit flex-col items-center justify-between gap-2">
-      <h2 class="text-right">{{ $t(this.price) }}</h2>
-      <h4>{{ $t(this.time) }}</h4>
-      <h4 v-if="this.elementId < 5" class="includedInPrice">{{ $t('priceIncluded') }}</h4>
+      <h2 class="text-right">{{ $t(price) }}</h2>
+      <h4>{{ $t(time) }}</h4>
+      <h4 v-if="elementId < 5" class="includedInPrice">{{ $t('priceIncluded') }}</h4>
     </div>
 
     <gradient-btn id="inner4">{{ $t('buttons.orderWebsite') }}</gradient-btn>
