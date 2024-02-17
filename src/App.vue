@@ -4,6 +4,8 @@
   </transition>
   <header>
     <img class="scale-125 pt-2" src="../public/fullLogo.svg" alt="qoldev" />
+    <img class="hidden" src="../public/sideBarBtn.svg" alt="pseudo" />
+    <img class="hidden" src="../public/closeSideBarBtn.svg" alt="pseudo" />
 
     <div class="mr-5 hidden flex-row gap-6 sm:flex">
       <side-bar-option
@@ -114,42 +116,6 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { ref, computed } from 'vue'
-
-const sideBarImg = new URL('../public/sideBarBtn.svg', import.meta.url).href
-const colseSideBarImg = new URL('../public/closeSideBarBtn.svg', import.meta.url).href
-
-const menuIconSrc = ref('../public/sideBarBtn.svg')
-const isSideBarOpen = ref(false)
-function sideBarAction() {
-  if (isSideBarOpen.value == true) {
-    isSideBarOpen.value = false
-  } else {
-    isSideBarOpen.value = true
-  }
-  changeMenuIconSrc()
-}
-
-function changeMenuIconSrc() {
-  if (menuIconSrc.value == 'http://localhost:5173/sideBarBtn.svg') {
-    menuIconSrc.value = colseSideBarImg
-    console.log(colseSideBarImg)
-    console.log('WHHHHHHH')
-  } else {
-    console.log(sideBarImg)
-    console.log('WHHHHHHH')
-    menuIconSrc.value = sideBarImg
-  }
-}
-const getImageUrl = computed(() => {
-  if (menuIconSrc.value === '../../../../public/sideBarBtn.svg') {
-    menuIconSrc.value = '../../../../public/closeSideBarBtn.svg'
-    return new URL(`../public/closeSideBarBtn.svg`, import.meta.url)
-  } else {
-    menuIconSrc.value = '../../../../public/sideBarBtn.svg'
-    return new URL(`../public/sideBarBtn.svg`, import.meta.url)
-  }
-})
 
 const { t } = useI18n({ useScope: 'global' })
 </script>
@@ -164,7 +130,7 @@ export default {
   },
   data() {
     return {
-      //menuIconSrc: '../public/sideBarBtn.svg',
+      menuIconSrc: '../public/sideBarBtn.svg',
       isSideBarOpen: false,
       isSideBarClosed: true,
       options: [
@@ -220,7 +186,23 @@ export default {
       ]
     }
   },
-  methods: {},
+  methods: {
+    sideBarAction() {
+      if (this.isSideBarOpen == true) {
+        this.isSideBarOpen = false
+      } else {
+        this.isSideBarOpen = true
+      }
+      this.changeMenuIconSrc()
+    },
+    changeMenuIconSrc() {
+      if (this.menuIconSrc == '../public/sideBarBtn.svg') {
+        this.menuIconSrc = '../public/closeSideBarBtn.svg'
+      } else {
+        this.menuIconSrc = '../public/sideBarBtn.svg'
+      }
+    }
+  },
   mounted() {
     if (
       !document.querySelector(
