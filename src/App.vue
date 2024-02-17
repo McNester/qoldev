@@ -4,8 +4,6 @@
   </transition>
   <header>
     <img class="scale-125 pt-2" src="../public/fullLogo.svg" alt="qoldev" />
-    <img class="hidden" src="../public/sideBarBtn.svg" alt="pseudo" />
-    <img class="hidden" src="../public/closeSideBarBtn.svg" alt="pseudo" />
 
     <div class="mr-5 hidden flex-row gap-6 sm:flex">
       <side-bar-option
@@ -197,7 +195,7 @@ export default {
     },
     changeMenuIconSrc() {
       if (this.menuIconSrc == '../public/sideBarBtn.svg') {
-        this.menuIconSrc = 'https://qoldev.vercel.app/public/closeSideBarBtn.svg'
+        this.menuIconSrc = '../public/closeSideBarBtn.svg'
       } else {
         this.menuIconSrc = '../public/sideBarBtn.svg'
       }
