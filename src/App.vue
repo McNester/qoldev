@@ -194,10 +194,10 @@ export default {
       this.changeMenuIconSrc()
     },
     changeMenuIconSrc() {
-      if (this.menuIconSrc == '../public/sideBarBtn.svg') {
-        this.menuIconSrc = '../public/closeSideBarBtn.svg'
+      if (this.menuIconSrc == '../../../../public/sideBarBtn.svg') {
+        this.menuIconSrc = '../../../../public/closeSideBarBtn.svg'
       } else {
-        this.menuIconSrc = '../public/sideBarBtn.svg'
+        this.menuIconSrc = '../../../../public/sideBarBtn.svg'
       }
     }
   },
