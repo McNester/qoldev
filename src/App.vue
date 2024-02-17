@@ -26,7 +26,7 @@
     </button>
 
     <button @click="sideBarAction" class="sm:hidden" type="button" aria-label="menu">
-      <img :src="menuIconSrc" alt="menu" />
+      <img :src="getImageUrl()" alt="menu" />
     </button>
   </header>
 
@@ -114,6 +114,11 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import menuIconSrc from '../public/sideBarBtn.svg'
+import menuIconSrcClosed from '../public/closeSideBarBtn.svg'
+const getImageUrl = () => {
+  return new URL(`../public/sideBarBtn.svg`, import.meta.url)
+}
 
 const { t } = useI18n({ useScope: 'global' })
 </script>
@@ -128,7 +133,7 @@ export default {
   },
   data() {
     return {
-      menuIconSrc: '../public/sideBarBtn.svg',
+      //menuIconSrc: '../public/sideBarBtn.svg',
       isSideBarOpen: false,
       isSideBarClosed: true,
       options: [

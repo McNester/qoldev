@@ -3,7 +3,7 @@
     <div id="verticalLine"></div>
     <div class="flex w-full flex-col items-center justify-center">
       <a target="_blank" :href="link.link">{{ link.name }}</a>
-      <img :src="'../../../../public/planet' + link.id + '.svg'" alt="planet image" />
+      <img :src="'./public/planet' + link.id + '.svg'" alt="planet image" />
       <transition-group name:fade>
         <div id="centerLine"></div>
         <h2>{{ $t('linksDescription.' + link.description) }}</h2>
