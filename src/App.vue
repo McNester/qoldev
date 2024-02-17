@@ -197,7 +197,7 @@ export default {
     },
     changeMenuIconSrc() {
       if (this.menuIconSrc == '../public/sideBarBtn.svg') {
-        this.menuIconSrc = '../public/closeSideBarBtn.svg'
+        this.menuIconSrc = 'https://qoldev.vercel.app/public/closeSideBarBtn.svg'
       } else {
         this.menuIconSrc = '../public/sideBarBtn.svg'
       }
