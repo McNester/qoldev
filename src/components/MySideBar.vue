@@ -94,7 +94,7 @@ export default {
 
 <style scoped>
 #container {
-  @apply fixed flex h-[100vh] w-[100vw] flex-col overflow-hidden bg-black bg-opacity-50 align-top;
+  @apply fixed flex h-[100vh] w-[100vw] flex-col overflow-hidden bg-black bg-opacity-80 align-top;
   @apply sm:bg-opacity-0;
   padding-top: 22vh;
   z-index: 10000;
