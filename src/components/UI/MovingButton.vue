@@ -25,7 +25,7 @@ button {
   }
 }
 @media (hover: none) {
-  button:focus-within .front {
+  button:focus .front {
     transform: translateY(0.1rem) translateX(0.1rem);
   }
 }

@@ -63,7 +63,7 @@ button {
 }
 
 @media (hover: none) {
-  button:focus-within {
+  button:focus {
     @apply bg-white;
     color: black;
     transition: all ease 0.5s;
