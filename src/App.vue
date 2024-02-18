@@ -299,7 +299,8 @@ section {
 }
 
 header {
-  @apply fixed flex h-11 w-full flex-row items-center justify-between bg-black bg-opacity-10 px-8 py-10 sm:bg-opacity-0;
+  background-color: #0a0a11;
+  @apply fixed flex h-11 w-full flex-row items-center justify-between px-8 py-10 sm:bg-opacity-0;
   z-index: 20000;
   overflow: hidden;
 }
