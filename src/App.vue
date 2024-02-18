@@ -271,6 +271,10 @@ body {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 section {
+  min-height: 100vh; /* Full height of the viewport */
+  /* Use padding to ensure text doesn't overlap with the notch or rounded corners */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
   height: 100vh;
   width: 100vw;
 }
