@@ -19,8 +19,15 @@ button {
   border: 1px solid white;
   font-family: 'Montserrat', sans-serif;
 }
-button:active .front {
-  transform: translateY(0.1rem) translateX(0.1rem);
+@media (hover: hover) {
+  button:active .front {
+    transform: translateY(0.1rem) translateX(0.1rem);
+  }
+}
+@media (hover: none) {
+  button:focus-within .front {
+    transform: translateY(0.1rem) translateX(0.1rem);
+  }
 }
 .front {
   @apply -ml-[41.2vw] -mt-[1.6rem] h-10 w-[80vw] bg-black p-2;

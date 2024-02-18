@@ -60,7 +60,7 @@ button {
   }
 }
 @media (hover: none) {
-  button:active {
+  button:focus-within {
     background-color: #4610bb;
     transition: all ease 0.5s;
   }

@@ -47,7 +47,7 @@ button {
   }
 }
 @media (hover: none) {
-  .gradient-border:active button {
+  .gradient-border:focus-within button {
     background: none;
   }
 }
