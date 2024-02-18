@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
     <span class="front">
       {{ $t('buttons.contactUs') }}
     </span>
@@ -7,7 +7,17 @@
 </template>
 <script>
 export default {
-  name: 'moving-button'
+  name: 'moving-button',
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleActive() {
+      this.isActive = !this.isActive
+    }
+  }
 }
 </script>
 <style scoped>
@@ -25,7 +35,7 @@ button {
   }
 }
 @media (hover: none) {
-  button:focus .front {
+  .active .front {
     transform: translateY(0.1rem) translateX(0.1rem);
   }
 }

@@ -1,5 +1,12 @@
 <template>
-  <button @mousemove="getMousePos" @mouseleave="resetPos" class="skw">
+  <button
+    @touchstart="toggleActive"
+    @touchend="toggleActive"
+    :class="{ active: isActive }"
+    @mousemove="getMousePos"
+    @mouseleave="resetPos"
+    class="skw"
+  >
     {{ $t('buttons.price') }}
   </button>
 </template>
@@ -37,7 +44,17 @@ const resetPos = () => {
 
 <script>
 export default {
-  name: 'transparent-btn'
+  name: 'transparent-btn',
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleActive() {
+      this.isActive = !this.isActive
+    }
+  }
 }
 </script>
 
@@ -63,10 +80,10 @@ button {
 }
 
 @media (hover: none) {
-  button:focus {
+  .active {
     @apply bg-white;
     color: black;
-    transition: all ease 0.5s;
+    transition: all ease 0.3s;
   }
 }
 
