@@ -302,9 +302,6 @@ header {
   @apply fixed flex h-11 w-full flex-row items-center justify-between bg-black bg-opacity-10 px-8 py-10 sm:bg-opacity-0;
   z-index: 20000;
   overflow: hidden;
-  padding-top: env(safe-area-inset-top);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
 }
 
 #portfolio {
