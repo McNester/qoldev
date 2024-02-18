@@ -267,6 +267,9 @@ body {
 
   font-family: 'Montserrat', sans-serif;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 .ruTextfont {
   font-family: 'Montserrat Alternates', sans-serif;
 }
