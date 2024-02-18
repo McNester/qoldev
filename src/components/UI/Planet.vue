@@ -3,7 +3,7 @@
     <div id="verticalLine"></div>
     <div class="flex w-full flex-col items-center justify-center">
       <a target="_blank" :href="link.link">{{ link.name }}</a>
-      <img :src="'./public/planet' + link.id + '.svg'" alt="planet image" />
+      <img :src="getImage(link.id)" alt="planet image" />
       <transition-group name:fade>
         <div id="centerLine"></div>
         <h2>{{ $t('linksDescription.' + link.description) }}</h2>
@@ -11,6 +11,38 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import planet1 from '/public/planet1.svg'
+import planet2 from '/public/planet2.svg'
+import planet3 from '/public/planet3.svg'
+import planet4 from '/public/planet4.svg'
+import planet5 from '/public/planet5.svg'
+import planet6 from '/public/planet6.svg'
+import planet7 from '/public/planet7.svg'
+import planet8 from '/public/planet8.svg'
+
+function getImage(id) {
+  switch (id) {
+    case 1:
+      return planet1
+    case 2:
+      return planet2
+    case 3:
+      return planet3
+    case 4:
+      return planet4
+    case 5:
+      return planet5
+    case 6:
+      return planet6
+    case 7:
+      return planet7
+    case 8:
+      return planet8
+  }
+}
+</script>
 
 <script>
 export default {
