@@ -1,5 +1,10 @@
 <template>
-  <div class="gradient-border">
+  <div
+    @touchstart="toggleActive"
+    @touchend="toggleActive"
+    :class="{ active: isActive }"
+    class="gradient-border"
+  >
     <button>
       <h1>
         <slot></slot>
@@ -9,7 +14,17 @@
 </template>
 <script>
 export default {
-  name: 'gradient-btn'
+  name: 'gradient-btn',
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleActive() {
+      this.isActive = !this.isActive
+    }
+  }
 }
 </script>
 <style scoped>
@@ -47,8 +62,9 @@ button {
   }
 }
 @media (hover: none) {
-  .gradient-border:focus button {
+  .active button {
     background: none;
+    transition: all 0.2s ease;
   }
 }
 
