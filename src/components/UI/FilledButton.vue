@@ -60,8 +60,8 @@ export default {
 
 <style scoped>
 button {
-  @apply w-[60vw] rounded-md py-2;
-  @apply sm:w-[25vw]  sm:rounded-lg sm:py-2;
+  @apply w-[60vw] rounded-md py-[0.6rem];
+  @apply sm:w-[25vw]  sm:rounded-lg sm:py-[0.45rem];
   background-color: #5f15fc;
   transition: all ease 0.4s;
 }
