@@ -36,7 +36,7 @@ export default {
   @apply lg:text-lg;
 }
 #optionsLine {
-  @apply mt-1 h-[0.02rem] w-[100vw] bg-white bg-opacity-15;
+  @apply mt-1 h-[0.05rem] w-[100vw] bg-white bg-opacity-15;
   @apply sm:hidden;
 }
 a {
