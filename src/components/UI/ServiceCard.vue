@@ -7,7 +7,15 @@
     <div id="inner3" class="flex h-fit w-fit flex-col items-center justify-between gap-2">
       <h2 class="text-right">{{ $t(price) }}</h2>
       <h4>{{ $t(time) }}</h4>
-      <h4 v-if="elementId < 5" class="includedInPrice">{{ $t('priceIncluded') }}</h4>
+      <h4
+        @touchstart="toggleActive"
+        @touchend="toggleActive"
+        :class="{ active: isActive }"
+        v-if="elementId < 5"
+        class="includedInPrice"
+      >
+        {{ $t('priceIncluded') }}
+      </h4>
     </div>
 
     <gradient-btn id="inner4">{{ $t('buttons.orderWebsite') }}</gradient-btn>
@@ -16,6 +24,16 @@
 <script>
 export default {
   name: 'service-card',
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleActive() {
+      this.isActive = !this.isActive
+    }
+  },
   props: {
     title: { type: String },
     body: { type: String },
@@ -60,7 +78,7 @@ h4 {
   }
 }
 @media (hover: none) {
-  .includedInPrice:active {
+  .active {
     @apply text-white;
   }
 }
