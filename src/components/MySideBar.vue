@@ -2,7 +2,7 @@
   <div id="container">
     <article id="langSwitcher">
       <button
-        @click="switchRu(), changeLang(0)"
+        @click="switchRu(), changeLang(0), closeSideBar()"
         :class="currentLang == 0 ? { chosen: true } : { chosen: false }"
         type="button"
         aria-label="Russian"
@@ -11,7 +11,7 @@
       </button>
 
       <button
-        @click="switchKz(), changeLang(1)"
+        @click="switchKz(), changeLang(1), closeSideBar()"
         :class="currentLang == 1 ? { chosen: true } : { chosen: false }"
         type="button"
         aria-label="Russian"
@@ -20,7 +20,7 @@
       </button>
 
       <button
-        @click="switchEn(), changeLang(2)"
+        @click="switchEn(), changeLang(2), closeSideBar()"
         :class="currentLang == 2 ? { chosen: true } : { chosen: false }"
         type="button"
         aria-label="Russian"
@@ -95,9 +95,7 @@ export default {
       }
     },
     closeSideBar() {
-      console.log('wh')
       this.$emit('closeSideBar')
-      console.log('at')
     }
   }
 }
@@ -106,8 +104,8 @@ export default {
 <style scoped>
 #container {
   @apply fixed flex h-[100vh] w-[100vw] flex-col overflow-hidden bg-black bg-opacity-80 align-top;
-  @apply sm:bg-opacity-0;
-  padding-top: 22vh;
+  @apply sm:bg-opacity-60;
+  padding-top: 10rem;
   z-index: 10000;
 }
 #mainLine {

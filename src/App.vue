@@ -388,7 +388,9 @@ header {
 }
 
 #service > h1 {
-  @apply mb-20 text-center text-3xl font-bold text-white;
+  @apply mb-20 text-center text-4xl font-bold text-white;
+  @apply sm:text-5xl;
+  @apply xl:text-6xl;
 }
 
 #contact {

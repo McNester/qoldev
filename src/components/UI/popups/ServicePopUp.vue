@@ -65,6 +65,34 @@ export default {
 
   z-index: 2000;
 }
+@media (min-width: 768px) {
+  #container {
+    @apply -ml-[1.3rem] h-[22rem] w-[47vw];
+  }
+  #servicesContainer {
+    @apply h-[45%] !important;
+  }
+  #notIncludeContainer {
+    @apply mt-[16.5rem] gap-0 !important;
+  }
+}
+@media (min-width: 1440px) {
+  #container {
+    @apply xl:h-[30rem];
+  }
+  #closeBtn {
+    @apply mr-5 mt-[10%] scale-125 self-end px-3;
+  }
+  h1 {
+    @apply mt-[3.5%] pl-5 text-4xl !important;
+  }
+  h3 {
+    @apply text-lg !important;
+  }
+  #notIncludeContainer {
+    @apply mt-[23rem] !important;
+  }
+}
 #servicesContainer {
   @apply h-[55%] w-[90%] items-center justify-center overflow-scroll;
 }

@@ -13,13 +13,23 @@
         @click="popUpAction"
         :class="{ active: isActive }"
         v-if="elementId < 5"
-        class="includedInPrice"
+        class="includedInPrice sm:hidden"
       >
         {{ $t('priceIncluded') }}
       </h4>
     </div>
 
     <gradient-btn id="inner4">{{ $t('buttons.orderWebsite') }}</gradient-btn>
+    <h4
+      @touchstart="toggleActive"
+      @touchend="toggleActive"
+      @click="popUpAction"
+      :class="{ active: isActive }"
+      v-if="elementId < 5"
+      class="includedInPrice hidden sm:block"
+    >
+      {{ $t('priceIncluded') }}
+    </h4>
     <transition name="fade">
       <service-popup
         @closePopup="popUpAction"
@@ -131,9 +141,10 @@ h4 {
   #inner2 {
     grid-row: 2;
     grid-column: 1;
+    @apply h-[6rem] self-start;
   }
   #inner3 {
-    @apply -ml-[1.4rem] w-[140%] items-end self-end;
+    @apply -ml-[1.8rem] mb-5 w-[130%] items-end self-end;
     grid-row: 1;
     grid-column: 2 / span 5;
   }
@@ -144,6 +155,11 @@ h4 {
   }
   h3 {
     @apply w-[30vw] text-sm;
+  }
+  .includedInPrice {
+    grid-row: 3;
+    grid-column: 2;
+    @apply -ml-[2.2rem] w-[17vw] text-right;
   }
 }
 
@@ -176,11 +192,20 @@ h4 {
   }
 
   #inner3 {
-    @apply -ml-[4rem];
+    @apply -mb-1 -ml-[4rem];
+  }
+  #inner1 {
+    @apply mt-5;
+  }
+  #inner2 {
+    @apply mt-6;
   }
 
   #inner4 {
     @apply -ml-[0rem];
+  }
+  .includedInPrice {
+    @apply mb-2;
   }
 }
 
