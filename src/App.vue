@@ -193,12 +193,12 @@ export default {
   },
   methods: {
     sideBarAction() {
+      this.changeMenuIconSrc()
       if (this.isSideBarOpen == true) {
         this.isSideBarOpen = false
       } else {
         this.isSideBarOpen = true
       }
-      this.changeMenuIconSrc()
     },
     changeMenuIconSrc() {
       if (this.menuIconSrc == '../public/sideBarBtn.svg') {
