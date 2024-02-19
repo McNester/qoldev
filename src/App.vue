@@ -2,6 +2,7 @@
   <transition name="fade">
     <my-side-bar @closeSideBar="sideBarAction" v-if="isSideBarOpen == true"></my-side-bar>
   </transition>
+
   <header>
     <img class="scale-125 pt-2" src="../public/fullLogo.svg" alt="qoldev" />
 
@@ -30,7 +31,9 @@
       <img id="sideBarImg" :src="sideBarIcon" alt="menu" />
     </button>
   </header>
-
+  <transition name="fade">
+    <contact-popup @closePopup="contactPopupAction" :isVisible="isContactOpen"></contact-popup>
+  </transition>
   <section id="intro" class="xl:scale-110">
     <div id="firstBack"></div>
 
@@ -43,8 +46,8 @@
       <div
         class="z-[1] mt-12 flex h-fit w-[95vw] flex-row items-center justify-around pl-2 sm:w-[40vw] sm:justify-between sm:pl-2"
       >
-        <transparent-btn @click="scrollTo('service')"></transparent-btn>
-        <filled-btn></filled-btn>
+        <transparent-btn @click="scrollTo('service')"> {{ $t('buttons.price') }}</transparent-btn>
+        <filled-btn @click="contactPopupAction"></filled-btn>
       </div>
     </div>
 
@@ -97,6 +100,7 @@
       {{ $t('serviceAndPrice') }}
     </h1>
     <service-card
+      @contactPopup="contactPopupAction"
       :elementId="service.id"
       :id="'item' + service.id"
       v-for="service in services"
@@ -114,7 +118,7 @@
     <h1>{{ $t('tryIt') }}</h1>
     <h2>{{ $t('experienceService') }}</h2>
 
-    <moving-button class="btn"></moving-button>
+    <moving-button @click="contactPopupAction" class="btn"></moving-button>
   </section>
 </template>
 
@@ -139,7 +143,7 @@ export default {
     return {
       menuIconSrc: '../public/sideBarBtn.svg',
       isSideBarOpen: false,
-      isSideBarClosed: true,
+      isContactOpen: false,
       options: [
         { id: 1, name: 'portfolio' },
         { id: 2, name: 'about' },
@@ -226,6 +230,9 @@ export default {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
       }
+    },
+    contactPopupAction() {
+      this.isContactOpen = !this.isContactOpen
     }
   },
   mounted() {

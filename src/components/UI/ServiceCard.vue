@@ -19,7 +19,9 @@
       </h4>
     </div>
 
-    <gradient-btn id="inner4">{{ $t('buttons.orderWebsite') }}</gradient-btn>
+    <gradient-btn @click="$emit('contactPopup')" id="inner4">{{
+      $t('buttons.orderWebsite')
+    }}</gradient-btn>
     <h4
       @touchstart="toggleActive"
       @touchend="toggleActive"

@@ -4,7 +4,8 @@
   "buttons": {
     "price": "Price",
     "orderWebsite": "Order a website",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "submitApplication": "Submit"
   },
   "menu": {
     "about": "About us",
@@ -189,8 +190,8 @@
   },
   "contactPopup": {
     "readyToDiscuss": "We are ready to discuss any idea you have!",
-    "phoneNumber": "phone number:",
-    "messengers": "messengers",
+    "phoneNumber": "Phone number:",
+    "messengers": "Messengers",
     "leaveYourData": "Leave your details, we will contact you soon and answer all your questions!",
     "placeHolders": {
       "name": "Your name",

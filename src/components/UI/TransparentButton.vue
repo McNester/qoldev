@@ -7,7 +7,7 @@
     @mouseleave="resetPos"
     class="skw"
   >
-    {{ $t('buttons.price') }}
+    <slot> </slot>
   </button>
 </template>
 

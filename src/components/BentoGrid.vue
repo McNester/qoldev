@@ -81,6 +81,7 @@ export default {
 }
 
 .scaled {
+  transition: all 0.5s ease;
   @apply scale-105;
 }
 </style>
