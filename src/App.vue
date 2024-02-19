@@ -32,7 +32,12 @@
     </button>
   </header>
   <transition name="fade">
-    <contact-popup @closePopup="contactPopupAction" :isVisible="isContactOpen"></contact-popup>
+    <contact-popup
+      :isSend="isSend"
+      @send="isSend = !isSend"
+      @closePopup="contactPopupAction"
+      :isVisible="isContactOpen"
+    ></contact-popup>
   </transition>
   <section id="intro" class="xl:scale-110">
     <div id="firstBack"></div>
@@ -144,6 +149,7 @@ export default {
       menuIconSrc: '../public/sideBarBtn.svg',
       isSideBarOpen: false,
       isContactOpen: false,
+      isSend: false,
       options: [
         { id: 1, name: 'portfolio' },
         { id: 2, name: 'about' },
@@ -232,6 +238,7 @@ export default {
       }
     },
     contactPopupAction() {
+      this.isSend = false
       this.isContactOpen = !this.isContactOpen
     }
   },

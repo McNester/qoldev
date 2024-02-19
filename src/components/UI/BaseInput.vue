@@ -31,4 +31,7 @@ export default {
 .input-container input:focus {
   @apply bg-opacity-20;
 }
+.red input {
+  @apply bg-red-400 bg-opacity-15 !important;
+}
 </style>

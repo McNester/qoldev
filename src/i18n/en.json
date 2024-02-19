@@ -196,6 +196,7 @@
     "placeHolders": {
       "name": "Your name",
       "message": "Message"
-    }
+    },
+    "sent": "Thank you! We'll reach you as soon as possible."
   }
 }

@@ -3,7 +3,8 @@
     <button type="button" @click="close" id="closeBtn">
       <img :src="closeSideBarIcon" alt="close icon" />
     </button>
-    <div id="contactInf">
+
+    <div id="contactInf" v-if="!isSend">
       <h1 id="title">
         {{ $t('contactPopup.readyToDiscuss') }}
       </h1>
@@ -16,27 +17,31 @@
           {{ $t('contactPopup.messengers') }}
         </h3>
         <div id="messangerContainer">
-          <button
+          <a
+            target="_blank"
+            href="https://wa.me/qr/6R6NLR6JBVZXF1"
             @touchstart="toggleActive1"
             @touchend="toggleActive1"
             :class="{ active1: isActive1 }"
             class="btn"
           >
             WhatsApp
-          </button>
-          <button
+          </a>
+          <a
+            target="_blank"
+            href="https://t.me/NesterO1"
             @touchstart="toggleActive2"
             @touchend="toggleActive2"
             :class="{ active2: isActive2 }"
             class="btn"
           >
             Telegram
-          </button>
+          </a>
         </div>
       </div>
     </div>
 
-    <form @submit.prevent>
+    <form @submit.prevent v-if="!isSend">
       <h4>
         {{ $t('contactPopup.leaveYourData') }}
       </h4>
@@ -45,8 +50,9 @@
         v-model="name"
         :placeholder="$t('contactPopup.placeHolders.name')"
       ></base-input>
-      <phone-input v-model:rawNumber="phone"></phone-input>
+      <phone-input id="phoneInput" v-model:rawNumber="phone"></phone-input>
       <base-textarea
+        id="messageInput"
         class="messageInput"
         v-model="message"
         :placeholder="$t('contactPopup.placeHolders.message')"
@@ -54,6 +60,7 @@
       <button
         @touchstart="toggleActive3"
         @touchend="toggleActive3"
+        @click="submitForm()"
         :class="{ active1: isActive3 }"
         class="btn"
         id="submit"
@@ -61,6 +68,12 @@
         {{ $t('buttons.submitApplication') }}
       </button>
     </form>
+
+    <transition name="fade">
+      <h1 class="sent" v-if="isSend">
+        {{ $t('contactPopup.sent') }}
+      </h1>
+    </transition>
   </div>
 </template>
 
@@ -72,7 +85,8 @@ import closeSideBarIcon from '../../../../public/closeSideBarBtn.svg'
 export default {
   name: 'contact-popup',
   props: {
-    isVisible: { type: Boolean }
+    isVisible: { type: Boolean },
+    isSend: { type: Boolean }
   },
   methods: {
     close() {
@@ -86,6 +100,43 @@ export default {
     },
     toggleActive3() {
       this.isActive3 = !this.isActive3
+    },
+    check() {
+      if (this.name.trim().length > 1) {
+        this.isNameReady = true
+        document.getElementById('nameInput').classList.remove('red')
+      } else {
+        this.isNameReady = false
+        document.getElementById('nameInput').classList.add('red')
+      }
+
+      if (this.phone.trim().length == 11) {
+        this.isPhoneReady = true
+        document.getElementById('phoneInput').classList.remove('red')
+      } else {
+        this.isPhoneReady = false
+        document.getElementById('phoneInput').classList.add('red')
+      }
+
+      if (this.message.trim().length > 1) {
+        this.isMessageReady = true
+        document.getElementById('messageInput').classList.remove('red')
+      } else {
+        this.isMessageReady = false
+        document.getElementById('messageInput').classList.add('red')
+      }
+    },
+    clear() {
+      this.name = ''
+      this.phone = ''
+      this.message = ''
+    },
+    submitForm() {
+      this.check()
+      if (this.isNameReady && this.isPhoneReady && this.isMessageReady) {
+        this.clear()
+        this.$emit('send')
+      }
     }
   },
   data() {
@@ -96,12 +147,10 @@ export default {
 
       isNameReady: false,
       isPhoneReady: false,
-      isEmailReady: false,
       isMessageReady: false,
 
       name: '',
       phone: '',
-      email: '',
       message: ''
     }
   }
@@ -116,6 +165,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -45%);
 }
+
 @media (min-width: 768px) {
   #container {
     @apply h-[31rem] flex-row gap-16 overflow-hidden;
@@ -200,6 +250,15 @@ h2 {
 
 form {
   @apply mt-5 flex flex-col items-center justify-center;
+}
+
+.sent {
+  @apply absolute w-[90%] text-center text-3xl font-bold !important;
+  @apply lg:text-5xl !important;
+  @apply xl:text-6xl !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (hover: none) {

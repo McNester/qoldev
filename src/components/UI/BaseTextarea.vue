@@ -28,6 +28,9 @@ export default {
   outline: none;
   transition: all 0.3s ease;
 }
+.red textarea {
+  @apply bg-red-400 bg-opacity-15 !important;
+}
 .input-container textarea:focus {
   @apply bg-opacity-20;
 }

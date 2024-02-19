@@ -60,4 +60,8 @@ export default {
 .phone-input-container input[type='tel']:focus {
   @apply bg-opacity-20;
 }
+
+.red input {
+  @apply bg-red-400 bg-opacity-15 !important;
+}
 </style>
