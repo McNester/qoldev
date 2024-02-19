@@ -13,6 +13,7 @@ import QualityCard from '@/components/UI/bentoCards/QualityCard.vue'
 import RedbullCard from '@/components/UI/bentoCards/RedbullCard.vue'
 import SpeedCard from '@/components/UI/bentoCards/SpeedCard.vue'
 import CardBack from '@/components/UI/bentoCards/CardBack.vue'
+import ServicePopUp from '@/components/UI/popups/ServicePopUp.vue'
 
 export default [
   MyColoredButton,
@@ -28,5 +29,6 @@ export default [
   CardBack,
   ServiceCard,
   GradientButton,
-  MovingButton
+  MovingButton,
+  ServicePopUp
 ]

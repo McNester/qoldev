@@ -10,6 +10,7 @@
       <h4
         @touchstart="toggleActive"
         @touchend="toggleActive"
+        @click="popUpAction"
         :class="{ active: isActive }"
         v-if="elementId < 5"
         class="includedInPrice"
@@ -19,6 +20,14 @@
     </div>
 
     <gradient-btn id="inner4">{{ $t('buttons.orderWebsite') }}</gradient-btn>
+    <transition name="fade">
+      <service-popup
+        @closePopup="popUpAction"
+        :title="title"
+        :popupInf="popupInf"
+        :isVisible="isPopupVisible"
+      ></service-popup>
+    </transition>
   </div>
 </template>
 <script>
@@ -26,12 +35,21 @@ export default {
   name: 'service-card',
   data() {
     return {
-      isActive: false
+      isActive: false,
+      isPopupVisible: false,
+      popupInf: {
+        baseService: 'pricePopup.' + this.popupName + '.serviceList',
+        baseNotInclude: 'pricePopup.' + this.popupName + '.notInclude',
+        serviceLen: this.serviceLen
+      }
     }
   },
   methods: {
     toggleActive() {
       this.isActive = !this.isActive
+    },
+    popUpAction() {
+      this.isPopupVisible = !this.isPopupVisible
     }
   },
   props: {
@@ -39,7 +57,9 @@ export default {
     body: { type: String },
     price: { type: String },
     time: { type: String },
-    elementId: { type: Number }
+    elementId: { type: Number },
+    popupName: { type: String },
+    serviceLen: { type: Number }
   }
 }
 </script>
@@ -162,5 +182,12 @@ h4 {
   #inner4 {
     @apply -ml-[0rem];
   }
+}
+
+.fade-enter-active {
+  animation: fadeIn 0.7s ease;
+}
+.fade-leave-active {
+  animation: fadeOut 0.5s ease forwards;
 }
 </style>

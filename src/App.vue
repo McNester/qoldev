@@ -92,6 +92,7 @@
   </section>
 
   <section id="service">
+    <service-popup class="absolute hidden sm:block"></service-popup>
     <h1 id="itemText" :class="$store.getters['lang/getStyleByLang']">
       {{ $t('serviceAndPrice') }}
     </h1>
@@ -104,6 +105,8 @@
       :body="service.body"
       :price="service.price"
       :time="service.time"
+      :popupName="service.popupName"
+      :serviceLen="service.serviceLen"
     ></service-card>
   </section>
 
@@ -151,42 +154,52 @@ export default {
           title: 'priceCards.first.title',
           body: 'priceCards.first.body',
           price: 'priceCards.first.price',
-          time: 'priceCards.first.time'
+          time: 'priceCards.first.time',
+          popupName: 'lending',
+          serviceLen: 8
         },
         {
           id: 2,
           title: 'priceCards.second.title',
           body: 'priceCards.second.body',
           price: 'priceCards.second.price',
-          time: 'priceCards.second.time'
+          time: 'priceCards.second.time',
+          popupName: 'multiPage',
+          serviceLen: 9
         },
         {
           id: 3,
           title: 'priceCards.third.title',
           body: 'priceCards.third.body',
           price: 'priceCards.third.price',
-          time: 'priceCards.third.time'
+          time: 'priceCards.third.time',
+          popupName: 'tilda',
+          serviceLen: 14
         },
         {
           id: 4,
           title: 'priceCards.fourth.title',
           body: 'priceCards.fourth.body',
           price: 'priceCards.fourth.price',
-          time: 'priceCards.fourth.time'
+          time: 'priceCards.fourth.time',
+          popupName: 'shop',
+          serviceLen: 14
         },
         {
           id: 5,
           title: 'priceCards.fifth.title',
           body: 'priceCards.fifth.body',
           price: 'priceCards.fifth.price',
-          time: 'priceCards.fifth.time'
+          time: 'priceCards.fifth.time',
+          popupName: ''
         },
         {
           id: 6,
           title: 'priceCards.sixth.title',
           body: 'priceCards.sixth.body',
           price: 'priceCards.sixth.price',
-          time: 'priceCards.sixth.time'
+          time: 'priceCards.sixth.time',
+          popupName: ''
         }
       ]
     }
