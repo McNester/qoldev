@@ -43,7 +43,7 @@
       <div
         class="z-[1] mt-12 flex h-fit w-[95vw] flex-row items-center justify-around pl-2 sm:w-[40vw] sm:justify-between sm:pl-2"
       >
-        <transparent-btn></transparent-btn>
+        <transparent-btn @click="scrollTo('service')"></transparent-btn>
         <filled-btn></filled-btn>
       </div>
     </div>
@@ -120,7 +120,6 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
 
 import sideBarIcon from '../public/sideBarBtn.svg'
 import closeSideBarIcon from '../public/closeSideBarBtn.svg'
@@ -220,6 +219,12 @@ export default {
       } else {
         this.menuIconSrc = '../public/sideBarBtn.svg'
         document.getElementById('sideBarImg').src = sideBarIcon
+      }
+    },
+    scrollTo(sectionId) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
       }
     }
   },
