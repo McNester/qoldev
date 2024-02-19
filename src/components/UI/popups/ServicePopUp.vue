@@ -65,6 +65,12 @@ export default {
 
   z-index: 2000;
 }
+#container::-webkit-scrollbar {
+  display: none;
+}
+#servicesContainer::-webkit-scrollbar {
+  display: none;
+}
 @media (min-width: 768px) {
   #container {
     @apply -ml-[1.3rem] h-[22rem] w-[47vw];
