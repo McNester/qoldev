@@ -32,7 +32,13 @@
     <div id="mainLine"></div>
 
     <article id="options">
-      <side-bar-option :name="$t('menu.' + option.name)" v-for="option in options" :key="option.id">
+      <side-bar-option
+        @closeSideBar="closeSideBar"
+        :href="option.name"
+        :name="$t('menu.' + option.name)"
+        v-for="option in options"
+        :key="option.id"
+      >
       </side-bar-option>
     </article>
   </div>
@@ -69,8 +75,8 @@ export default {
     return {
       currentLang: this.$store.getters['lang/getLangId'],
       options: [
-        { id: 1, name: 'about' },
-        { id: 2, name: 'portfolio' },
+        { id: 1, name: 'portfolio' },
+        { id: 2, name: 'about' },
         { id: 3, name: 'service' },
         { id: 4, name: 'contact' }
       ]
@@ -87,6 +93,11 @@ export default {
       } else {
         this.$store.commit('lang/changeLangEn')
       }
+    },
+    closeSideBar() {
+      console.log('wh')
+      this.$emit('closeSideBar')
+      console.log('at')
     }
   }
 }

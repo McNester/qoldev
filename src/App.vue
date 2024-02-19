@@ -1,12 +1,13 @@
 <template>
   <transition name="fade">
-    <my-side-bar v-if="isSideBarOpen == true"></my-side-bar>
+    <my-side-bar @closeSideBar="sideBarAction" v-if="isSideBarOpen == true"></my-side-bar>
   </transition>
   <header>
     <img class="scale-125 pt-2" src="../public/fullLogo.svg" alt="qoldev" />
 
     <div class="mr-5 hidden flex-row gap-6 sm:flex">
       <side-bar-option
+        :href="option.name"
         class="hidden sm:block"
         :name="$t('menu.' + option.name)"
         v-for="option in options"
@@ -57,7 +58,9 @@
 
   <section id="portfolio">
     <img class="absolute hidden w-full sm:block" src="../public/firstOrbit.svg" alt="" />
-    <h2 :class="$store.getters['lang/getStyleByLang']">{{ $t('businessSolution') }}</h2>
+    <h2 :class="$store.getters['lang/getStyleByLang']">
+      {{ $t('businessSolution') }}
+    </h2>
 
     <div id="planetsContainer">
       <planet
@@ -136,8 +139,8 @@ export default {
       isSideBarOpen: false,
       isSideBarClosed: true,
       options: [
-        { id: 1, name: 'about' },
-        { id: 2, name: 'portfolio' },
+        { id: 1, name: 'portfolio' },
+        { id: 2, name: 'about' },
         { id: 3, name: 'service' },
         { id: 4, name: 'contact' }
       ],
@@ -264,6 +267,7 @@ body {
   overflow-x: hidden !important;
   overscroll-behavior-y: none;
   background-color: #0a0a11;
+  scroll-behavior: smooth;
 
   font-family: 'Montserrat', sans-serif;
 }
@@ -302,7 +306,8 @@ section {
 }
 
 header {
-  @apply fixed flex h-11 w-full flex-row items-center justify-between bg-black bg-opacity-10 px-8 py-10 sm:bg-opacity-0;
+  @apply fixed flex h-11 w-full flex-row items-center justify-between bg-black bg-opacity-10 px-8 py-10 backdrop-blur-sm;
+  @apply sm:bg-opacity-0 sm:backdrop-blur-md;
   z-index: 20000;
   overflow: hidden;
 }

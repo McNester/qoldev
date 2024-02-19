@@ -1,6 +1,6 @@
 <template>
   <div id="optionsContainer" :class="$store.getters['lang/getStyleByLang']">
-    <button type="button" aria-label="option">{{ name }}</button>
+    <a @click="scrollTo(href)" aria-label="option">{{ name }}</a>
   </div>
   <div id="optionsLine"></div>
 </template>
@@ -11,6 +11,18 @@ export default {
   props: {
     name: {
       type: String
+    },
+    href: {
+      type: String
+    }
+  },
+  methods: {
+    scrollTo(sectionId) {
+      this.$emit('closeSideBar')
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
   }
 }
@@ -27,7 +39,8 @@ export default {
   @apply mt-1 h-[0.02rem] w-[100vw] bg-white bg-opacity-15;
   @apply sm:hidden;
 }
-button {
+a {
+  cursor: pointer;
   transition: all 0.5s ease;
 }
 #optionsContainer:hover {
