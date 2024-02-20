@@ -134,7 +134,7 @@ export default {
     submitForm() {
       this.check()
       if (this.isNameReady && this.isPhoneReady && this.isMessageReady) {
-        const messageToBot = `${this.name}, сообщает:%0A${this.message}%0A %0A Контактные данные: ${this.phone}`
+        const messageToBot = `${this.name}, сообщает:%0A${this.message}%0A %0AКонтактные данные: ${this.phone}`
         const url = `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${messageToBot}`
         this.$http.post(url).then(
           (response) => {
