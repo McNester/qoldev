@@ -4,6 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import components from '@/components/UI'
 import store from '@/store'
+import axios from 'axios'
 
 import { languages } from './i18n'
 import { defaultLocale } from './i18n'
@@ -27,5 +28,7 @@ const app = createApp(App, {
 components.forEach((component) => {
   app.component(component.name, component)
 })
+
+app.config.globalProperties.$http = axios
 
 app.use(store).use(i18n).mount('#app')

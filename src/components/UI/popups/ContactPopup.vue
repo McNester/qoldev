@@ -134,8 +134,18 @@ export default {
     submitForm() {
       this.check()
       if (this.isNameReady && this.isPhoneReady && this.isMessageReady) {
-        this.clear()
-        this.$emit('send')
+        const messageToBot = `${this.name}, сообщает:%0A${this.message}%0A %0A Контактные данные: ${this.phone}`
+        const url = `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${messageToBot}`
+        this.$http.post(url).then(
+          (response) => {
+            console.log('Success!')
+            this.clear()
+            this.$emit('send')
+          },
+          (error) => {
+            console.log('Error: ' + error)
+          }
+        )
       }
     }
   },
@@ -151,7 +161,11 @@ export default {
 
       name: '',
       phone: '',
-      message: ''
+      message: '',
+
+      //Telegram bot config
+      token: '7197406185:AAH16QOS34bR0ZP3xfKUTWNuAhtQ91Pirws',
+      chatId: 832149954
     }
   }
 }
